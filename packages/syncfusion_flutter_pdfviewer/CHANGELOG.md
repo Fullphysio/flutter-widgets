@@ -1,14 +1,4 @@
-## Unreleased
-
-**General**
-
-* Upgraded the [`device_info_plus`](https://pub.dev/packages/device_info_plus) package to the latest version `13.1.0`.
-
-**Bugs**
-
-* Now, the `SfPdfViewer` widget prevents duplication of read-only form fields when reopening a saved PDF without flattening.
-
-## [33.2.10] - 06/02/2026
+## [33.2.12] - 06/09/2026
 
 **Bugs**
 
@@ -50,7 +40,7 @@
 
 **Bugs**
 
-* Now, the `SfPdfViewer` widget resolved an issue where form fields were accidentally focused while scrolling
+* Now, the `SfPdfViewer` widget resolved an issue where form fields were accidentally focused while scrolling.
 
 ## [33.1.45] - 03/24/2026
 

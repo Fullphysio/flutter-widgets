@@ -1668,9 +1668,6 @@ class SfPdfViewerState extends State<SfPdfViewer> with WidgetsBindingObserver {
   void _retrieveFormFieldsDetails() {
     for (int i = 0; i < _document!.form.fields.count; i++) {
       final PdfField field = _document!.form.fields[i];
-      if (_isAndroid && _isTablet && field.readOnly) {
-        continue;
-      }
 
       final PdfPage? page = _document!.form.fields[i].page;
       if (page == null) {
