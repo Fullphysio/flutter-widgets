@@ -4070,9 +4070,10 @@ class SfPdfViewerState extends State<SfPdfViewer> with WidgetsBindingObserver {
     _renderedImages.clear();
     final double zoomLevel = _transformationController.value[0];
     if (widget.pageLayoutMode == PdfPageLayoutMode.single) {
-      if (!_pageTextExtractor.containsKey(
-        _pdfViewerController.pageNumber - 1,
-      )) {
+      if (WidgetsBinding.instance.semanticsEnabled &&
+          !_pageTextExtractor.containsKey(
+            _pdfViewerController.pageNumber - 1,
+          )) {
         _pageTextExtractor[_pdfViewerController.pageNumber -
             1] = _pdfTextExtractor!.extractText(
           startPageIndex: _pdfViewerController.pageNumber - 1,
@@ -4114,7 +4115,8 @@ class SfPdfViewerState extends State<SfPdfViewer> with WidgetsBindingObserver {
         if (viewportRect.overlaps(pageRect)) {
           _renderedImages.add(pageNumber);
           //Extract page text only if it's not already available.
-          if (!_pageTextExtractor.containsKey(pageNumber - 1)) {
+          if (WidgetsBinding.instance.semanticsEnabled &&
+              !_pageTextExtractor.containsKey(pageNumber - 1)) {
             _pageTextExtractor[pageNumber - 1] = _pdfTextExtractor!.extractText(
               startPageIndex: pageNumber - 1,
             );
@@ -4147,7 +4149,8 @@ class SfPdfViewerState extends State<SfPdfViewer> with WidgetsBindingObserver {
         if (viewportRect.overlaps(pageRect)) {
           _renderedImages.add(pageNumber);
           //Extract page text only if it's not already available.
-          if (!_pageTextExtractor.containsKey(pageNumber - 1)) {
+          if (WidgetsBinding.instance.semanticsEnabled &&
+              !_pageTextExtractor.containsKey(pageNumber - 1)) {
             _pageTextExtractor[pageNumber - 1] = _pdfTextExtractor!.extractText(
               startPageIndex: pageNumber - 1,
             );
